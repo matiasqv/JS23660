@@ -8,8 +8,8 @@ if (numero % 2 == 0) {
 else if ((numero + 1) % 2 == 0) {
     alert("El numero ingresado es impar");
 }
-else if ((numero) % 2 > 0 && (numero) % 2 < 1) {
-    alert("El numero ingresado es un numro decimal");
+else if (numero % 2 > 0 && numero % 2 < 1) {
+    alert("El numero ingresado es un numero decimal");
 }
 else {
     alert("No ingresaste un numero");
