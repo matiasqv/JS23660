@@ -15,6 +15,7 @@ else {
     alert("No ingresaste un numero");
 } */
 
+
 // Clase 03 Desafío: Crear un algoritmo utilizando un ciclo
 
 // Clacula el area y perimetro de un cuadrado rectangulo y saliendo por consola, tantas veces como se quiera
