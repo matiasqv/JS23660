@@ -41,7 +41,7 @@ let bebida = 0;
 let cantidadBebida = 0;
 let cantidadComida = 0;
 let precioComida = 0;
-let Preciobebida =0;
+let precioBebida =0;
 let propina = 0;
 let porcentajePropina = 0;
 let iva = 0;
@@ -96,23 +96,23 @@ function pedirBebida() {
         switch (bebida) {
             case 1 :
                 bebida = "Gaseosa ($150)";
-                Preciobebida = 150;
-                cuenta += (Preciobebida * cantidadBebida);
+                precioBebida = 150;
+                cuenta += (precioBebida * cantidadBebida);
                 break;
             case 2 :
                 bebida = "Agua ($100)";
-                Preciobebida = 100;
-                cuenta += (Preciobebida * cantidadBebida);
+                precioBebida = 100;
+                cuenta += (precioBebida * cantidadBebida);
                 break;
             case 3 :
                 bebida = "Jugo ($200))";
-                Preciobebida = 150;
-                cuenta += (Preciobebida * cantidadBebida);
+                precioBebida = 150;
+                cuenta += (precioBebida * cantidadBebida);
                 break;
             case 4 :
                 bebida = "Agua gasificada ($120)";
-                Preciobebida = 120;
-                cuenta += (Preciobebida * cantidadBebida);
+                precioBebida = 120;
+                cuenta += (precioBebida * cantidadBebida);
                 break;
         }
     }
@@ -158,7 +158,7 @@ darPropina();
 alert(`
     Detalle de la cuenta:
     - ${cantidadComida} x ${comida} = $${cantidadComida*precioComida}
-    - ${cantidadBebida} x ${bebida} = $${cantidadBebida*Preciobebida}
+    - ${cantidadBebida} x ${bebida} = $${cantidadBebida*precioBebida}
     
     SubTotal = $${cuenta} (iva = $${iva})
     -Descuento = $${descuento}
