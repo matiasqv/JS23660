@@ -31,7 +31,7 @@ while ( lado !=  0) {
 }; */
 
 
-// Clase 03 Desafío: Simulador interactivo
+/* // Clase 04 Desafío: Simulador interactivo
 
 
 let cuenta = 0;
@@ -106,7 +106,7 @@ function pedirBebida() {
                 break;
             case 3 :
                 bebida = "Jugo ($200))";
-                precioBebida = 150;
+                precioBebida = 200;
                 cuenta += (precioBebida * cantidadBebida);
                 break;
             case 4 :
@@ -165,7 +165,51 @@ alert(`
     -Propina = $${propina} (% = ${porcentajePropina})
     ==========================
     Total = $${total}
+`); */
+
+
+
+
+// Clase 04 Desafío: Simulador interactivo
+
+
+
+const multiplicar = (a,b) => a * b;
+const suma = (a,b) => a + b;
+const resta = (a,b) => a - b;
+const porcentaje = (a,b) => multiplicar (a,b)/100;
+const iva = x => x *0.21;
+
+
+
+
+let comida =  "Pancho ($100)";
+let precioComida = 100;
+let cantidadComida = 4;
+let bebida = "Gaseosa ($150)";
+let precioBebida = 150;
+let cantidadBebida = 4;
+let totalDesc = 10;
+let porcentajePropina = 15;
+
+
+alert(`
+    Detalle de la cuenta:
+    - ${cantidadComida} x ${comida} = $${multiplicar(cantidadComida,precioComida)}
+    - ${cantidadBebida} x ${bebida} = $${multiplicar(cantidadBebida,precioBebida)}
+    
+    SubTotal = $${suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida))} (iva = $${iva(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)))})
+    -Descuento = $${porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),totalDesc)}
+    -Propina = $${porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),porcentajePropina)} (% = ${porcentajePropina})
+    ==========================
+    Total = $${suma(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),
+                resta(porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),porcentajePropina),
+                    porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),totalDesc)))}
 `);
+
+console.log("Total: $"+suma(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),
+            resta(porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),porcentajePropina),
+                porcentaje(suma(multiplicar(cantidadComida,precioComida),multiplicar(cantidadBebida,precioBebida)),totalDesc))));
 
 
 
