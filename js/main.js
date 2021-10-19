@@ -1,6 +1,7 @@
-// Clase 05 Desafío: Incorporar objetos
+// Clase 06 Desafío: Incorporar Arrays
 
 let comida = 0;
+let comida1 = 0;
 let cantidadComida = 0;
 let precioComida = 0;
 let bebida = 0;
@@ -55,30 +56,36 @@ class Pedido {
     }
 }
 
+
+
+
+
+
 function tomarPedido() {
+
     while(!comida || comida == 0 || comida > 4 || comida < 0) {
         comida = parseInt(prompt(
             "¿Qué va a comer? Introduce el número junto a la opción:\n 1:Pancho($100),\n 2:Hamburguesa($350),\n 3:Picada($700),\n 4:Tostados($200)"));
-    }
+    }   
+    const pedidoComida = [
+        {id:1, comida: 'Pancho', precioComida: 100},
+        {id:2, comida: 'Hamburguesa', precioComida: 350},
+        {id:3, comida: 'Picada', precioComida: 700},
+        {id:4, comida: 'Tostados', precioComida: 200}
+    ];
+    if (comida == pedidoComida.id) {
+        comida = pedidoComida.comida;
+        comida1 = pedidoComida.comida;
+        precioComida = pedidoComida.precioComida;
 
-    switch (comida) {
-        case 1 :
-            comida = "Pancho ($100)";
-            precioComida = 100;
-            break;
-        case 2 :
-            comida = "Hamburguesa ($350)";
-            precioComida = 350;
-            break;
-        case 3 :
-            comida = "Picada ($700)";
-            precioComida = 700;   
-            break;
-        case 4 :
-            comida = "Tostados($200)";
-            precioComida = 200;
-            break;
+        console.log(comida1);
+        console.log(precioComida);
     }
+    console.log(comida1);
+    console.log(precioComida);
+
+
+
 
     while(!cantidadComida || cantidadComida == 0 || cantidadComida < 0) {
         cantidadComida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
@@ -111,7 +118,29 @@ function tomarPedido() {
         cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
     }
 
+
+
+
+    console.log(comida);
+    console.log(comida1);
+    console.log(precioComida);
+    console.log(cantidadComida);
+    console.log(bebida);
+    console.log(precioBebida);
+    console.log(cantidadBebida);
+
+
     return new Pedido(comida, precioComida, cantidadComida, bebida, precioBebida, cantidadBebida)
+
+
+
+    
+
+
+
+
+
+
 
 }
 
