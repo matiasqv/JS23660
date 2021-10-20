@@ -100,8 +100,7 @@ function tomarPedido() {
             comida = 0;
         }
     }
-<<<<<<< HEAD
-=======
+
     // Ordena de menor a mayor las comidas
     let ordenadosPrecioComida = [];
     ordenadosPrecioComida = pedidoComida.map(elemento => elemento);
@@ -111,7 +110,7 @@ function tomarPedido() {
 
     console.log("Ordenar por precio comida");
     console.log(ordenadosPrecioComida);
->>>>>>> 35d45f2
+
 
     while (!cantidadComida || cantidadComida == 0 || cantidadComida < 0) {
         cantidadComida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
@@ -157,6 +156,7 @@ function tomarPedido() {
             bebida = 0;
         }
     }
+    
     // Ordena las bebidas de menor a mayor precio
     let ordenadosPrecioBebida = [];
     ordenadosPrecioBebida = pedidoBebida.map(elemento => elemento);
@@ -167,11 +167,6 @@ function tomarPedido() {
     console.log("Ordenar por precio bebida");
     console.log(ordenadosPrecioBebida);
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 35d45f2
     while (!cantidadBebida || cantidadBebida == 0 || cantidadBebida < 0) {
         cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"))
     }
