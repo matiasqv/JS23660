@@ -36,9 +36,11 @@ class Pedido {
             this.descuento = this.cuenta * -0.1;
             this.total = this.cuenta + this.descuento;
         }
-        return this.total;
+        else{
+            this.total = this.cuenta;
+        }
     }
-    
+
     darPropina() {
         this.propina = confirm("¿Te Gustaría dejar propina?");
         
@@ -48,7 +50,7 @@ class Pedido {
                 this.porcentajePropina = parseFloat(prompt("¿QUE %? (Solo números)"));
             }
             this.propina = this.cuenta * this.porcentajePropina /100;
-            this.total = this.total + this.propina;      
+            this.total = this.total + this.propina;   
         } else {
             this.propina = 0;
         }
