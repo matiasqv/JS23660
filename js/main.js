@@ -69,8 +69,6 @@ function tomarPedido() {
         comida = parseInt(prompt(
             "¿Qué va a comer? Introduce el número junto a la opción:\n 1:Pancho($100),\n 2:Hamburguesa($350),\n 3:Picada($700),\n 4:Tostados($200)"));
             
-        // console.log(comida);
-        
         if (comida == 1) {
             comida = pedidoComida[0].comida;
             precioComida = pedidoComida[0].precioComida;
@@ -92,10 +90,6 @@ function tomarPedido() {
         }
     }
     
-
-    // console.log(precioComida);
-
-
     while(!cantidadComida || cantidadComida == 0 || cantidadComida < 0) {
         cantidadComida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
     }
@@ -110,7 +104,6 @@ function tomarPedido() {
     while(!bebida || bebida == 0 || bebida > 4 || bebida < 0) {
         bebida = parseInt(prompt("¿Qué le gustaría beber? Introduce el número junto a la opción:\n 1:Gaseosa($150),\n 2:Agua($100),\n 3:Jugo($200),\n 4:Agua gasificada($120)"));
     
-
         if (bebida == 1) {
             bebida = pedidoBebida[0].bebida;
             precioBebida = pedidoBebida[0].precioBebida;
@@ -135,13 +128,6 @@ function tomarPedido() {
     while(!cantidadBebida || cantidadBebida == 0 || cantidadBebida < 0) {
         cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"))
     }
-
-    // console.log(comida);
-    // console.log(precioComida);
-    // console.log(cantidadComida);
-    // console.log(bebida);
-    // console.log(precioBebida);
-    // console.log(cantidadBebida);
 
     return new Pedido(comida, precioComida, cantidadComida, bebida, precioBebida, cantidadBebida);
 }
