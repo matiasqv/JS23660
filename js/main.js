@@ -63,26 +63,52 @@ class Pedido {
 
 function tomarPedido() {
 
+
+    const pedidoComida = [
+        {id:1, comida: 'Pancho($100)', precioComida: 100},
+        {id:2, comida: 'Hamburguesa($350)', precioComida: 350},
+        {id:3, comida: 'Picada($700)', precioComida: 700},
+        {id:4, comida: 'Tostados($200)', precioComida: 200}
+    ];
+
+
+
     while(!comida || comida == 0 || comida > 4 || comida < 0) {
         comida = parseInt(prompt(
             "¿Qué va a comer? Introduce el número junto a la opción:\n 1:Pancho($100),\n 2:Hamburguesa($350),\n 3:Picada($700),\n 4:Tostados($200)"));
-    }   
-    const pedidoComida = [
-        {id:1, comida: 'Pancho', precioComida: 100},
-        {id:2, comida: 'Hamburguesa', precioComida: 350},
-        {id:3, comida: 'Picada', precioComida: 700},
-        {id:4, comida: 'Tostados', precioComida: 200}
-    ];
-    if (comida == pedidoComida.id) {
-        comida = pedidoComida.comida;
-        comida1 = pedidoComida.comida;
-        precioComida = pedidoComida.precioComida;
+             
 
-        console.log(comida1);
-        console.log(precioComida);
-    }
+        console.log(comida);
+        if (comida == 1) {
+            comida = pedidoComida[0].comida;
+            precioComida = pedidoComida[0].precioComida;
+        }
+        else if (comida == 2) {
+            comida = pedidoComida[1].comida;
+            precioComida = pedidoComida[1].precioComida;
+        }
+        else if (comida == 3) {
+            comida = pedidoComida[2].comida;
+            precioComida = pedidoComida[2].precioComida;
+        }
+        else if (comida == 4) {
+            comida = pedidoComida[3].comida;
+            precioComida = pedidoComida[3].precioComida;
+        };
+    
+    
+    } ;
+    
+
+
+
+
+
     console.log(comida1);
     console.log(precioComida);
+
+
+
 
 
 
