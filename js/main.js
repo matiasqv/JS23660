@@ -100,7 +100,7 @@ function tomarPedido() {
             comida = 0;
         }
     }
-
+    // Ordena de menor a mayor las comidas
     let ordenadosPrecioComida = [];
     ordenadosPrecioComida = pedidoComida.map(elemento => elemento);
     ordenadosPrecioComida.sort(function (a, b) {
@@ -154,7 +154,7 @@ function tomarPedido() {
             bebida = 0;
         }
     }
-
+    // Ordena las bebidas de menor a mayor precio
     let ordenadosPrecioBebida = [];
     ordenadosPrecioBebida = pedidoBebida.map(elemento => elemento);
     ordenadosPrecioBebida.sort(function (a, b) {
