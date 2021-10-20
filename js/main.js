@@ -164,6 +164,8 @@ function tomarPedido() {
     console.log("Ordenar por precio bebida");
     console.log(ordenadosPrecioBebida);
 
+
+
     while (!cantidadBebida || cantidadBebida == 0 || cantidadBebida < 0) {
         cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"))
     }
@@ -190,113 +192,6 @@ alert(`
     ==========================
     Total = $${pedido.total}
 `);
-
-
-// class Producto {
-//     constructor(nombre, precio, detalle, cantidad){
-//         this.nombre = nombre;
-//         this.precio = parseFloat(precio);
-//         this.detalle = detalle;
-//         this.cantidad = cantidad; 
-//         this.disponible = true;
-//     }
-//     sumarIva() {
-//         return this.precio * 1.21;
-//     }
-//     vender() {
-//         this.disponible = false;
-//     }
-//     precioSugerido() {
-//         return this.precio *1.21 *1.25;
-//     }
-// }
-
-// let arrayProductos = [];
-// do {
-//     let comprobacion = prompt("Ingrese nombre del producto o fin para terminar de agregar");
-//     console.log(comprobacion);
-//     if (comprobacion === "fin" || comprobacion === "FIM" || comprobacion === "Fin"){
-//         break;
-//     }else{
-//         nombreP = comprobacion;
-//         let precioP = prompt("Ingrese el precion del producto");
-//         let detalleP = prompt("Ingrese el detalle del producto");
-//         let cantidadP = prompt("Ingrese la cantidad comprada del producto");
-//         arrayProductos.push(new Producto(nombreP, precioP, detalleP, cantidadP));
-//         console.log(arrayProductos);
-//         console.log(comprobacion);
-//     }
-// }
-
-// while (nombreP != "fin" ||nombreP != "FIM" || nombreP != "Fin");
-// console.log(arrayProductos);
-
-// for (let producto of arrayProductos){
-//     console.log(producto.nombre);
-//     console.log(producto.detalle);
-//     console.log(producto.cantidad);
-//     console.log(producto.sumarIva());
-// }
-
-// // por stock
-
-// let pocoStock = arrayProductos.filter(producto => producto.cantidad <= 3);
-// console.log("poco stock");
-// console.log(pocoStock);
-
-// for (let producto of pocoStock){
-//     console.log(producto.nombre);
-//     console.log(producto.detalle);
-//     console.log(producto.cantidad);
-// }
-
-// // sin stock
-
-// let sinStock = arrayProductos.filter(producto => producto.cantidad = 0 || producto.disponible == false); 
-// console.log("sin stock");
-// console.log(sinStock);
-
-// for (let producto of sinStock){
-//     console.log(producto.nombre);
-//     console.log(producto.detalle);
-//     console.log(producto.cantidad);
-// }
-
-// ordenar por cantidad
-
-
-//     const pedidoComida = [
-//         {id:1, comida: 'Pancho', precioComida: 100},
-//         {id:2, comida: 'Hamburguesa', precioComida: 350},
-//         {id:3, comida: 'Picada', precioComida: 700},
-//         {id:4, comida: 'Tostados', precioComida: 200},
-//     ];
-
-
-
-// let ordenadosPrecio = [];
-// ordenadosPrecio = pedidoComida.map(elemento => elemento);
-// ordenadosPrecio.sort(function(a , b){
-//     return a.precioComida - b.precioComida;
-// });
-
-// console.log("Ordenar por precio");
-// console.log(ordenadosPrecio);
-
-// for (let pedidoComida of ordenadosPrecio){
-//     console.log(pedidoComida.id);
-//     console.log(pedidoComida.comida);
-//     console.log(pedidoComida.precioComida);
-// }
-
-
-
-
-
-
-
-
-
 
 
 
