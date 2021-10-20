@@ -1,4 +1,4 @@
-// Clase 06 Desafío: Incorporar Arrays
+// // Clase 06 Desafío Complementario: Ordenar un array de objetos
 
 let comida = 0;
 let cantidadComida = 0;
@@ -100,6 +100,18 @@ function tomarPedido() {
             comida = 0;
         }
     }
+<<<<<<< HEAD
+=======
+    // Ordena de menor a mayor las comidas
+    let ordenadosPrecioComida = [];
+    ordenadosPrecioComida = pedidoComida.map(elemento => elemento);
+    ordenadosPrecioComida.sort(function (a, b) {
+        return a.precioComida - b.precioComida;
+    });
+
+    console.log("Ordenar por precio comida");
+    console.log(ordenadosPrecioComida);
+>>>>>>> 35d45f2
 
     while (!cantidadComida || cantidadComida == 0 || cantidadComida < 0) {
         cantidadComida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
@@ -145,7 +157,21 @@ function tomarPedido() {
             bebida = 0;
         }
     }
+    // Ordena las bebidas de menor a mayor precio
+    let ordenadosPrecioBebida = [];
+    ordenadosPrecioBebida = pedidoBebida.map(elemento => elemento);
+    ordenadosPrecioBebida.sort(function (a, b) {
+        return a.precioBebida - b.precioBebida;
+    });
 
+    console.log("Ordenar por precio bebida");
+    console.log(ordenadosPrecioBebida);
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35d45f2
     while (!cantidadBebida || cantidadBebida == 0 || cantidadBebida < 0) {
         cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"))
     }
@@ -172,6 +198,13 @@ alert(`
     ==========================
     Total = $${pedido.total}
 `);
+
+
+
+
+
+
+
 
 
 
