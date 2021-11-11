@@ -1,4 +1,4 @@
-// // Clase 06 Desafío Complementario: Ordenar un array de objetos
+// // Clase 12 : Orden
 
 let comida = 0;
 let cantidadComida = 0;
@@ -57,124 +57,91 @@ class Pedido {
 }
 
 
-function tomarPedido() {
-
-    const pedidoComida = [
-        { id: 1, comida: 'Pancho', precioComida: 100 },
-        { id: 2, comida: 'Hamburguesa', precioComida: 350 },
-        { id: 3, comida: 'Picada', precioComida: 700 },
-        { id: 4, comida: 'Tostados', precioComida: 200 },
-    ];
-
-    while (!comida || comida == 0 || comida > 5 || comida < 0) {
-        comida = parseInt(prompt(
-            "¿Qué va a comer? Introduce el número junto a la opción:\n 1: Pancho($100),\n 2: Hamburguesa($350),\n 3: Picada($700),\n 4: Tostados($200),\n 5: Otro comida"));
-
-        if (comida == 1) {
-            comida = pedidoComida[0].comida;
-            precioComida = pedidoComida[0].precioComida;
-        }
-        else if (comida == 2) {
-            comida = pedidoComida[1].comida;
-            precioComida = pedidoComida[1].precioComida;
-        }
-        else if (comida == 3) {
-            comida = pedidoComida[2].comida;
-            precioComida = pedidoComida[2].precioComida;
-        }
-        else if (comida == 4) {
-            comida = pedidoComida[3].comida;
-            precioComida = pedidoComida[3].precioComida;
-        }
-        else if (comida == 5) {
-            let entradaComida = prompt("Ingresar otra comida");
-            let entradaPrecioComida;
-            while (!entradaPrecioComida || entradaPrecioComida == 0 || entradaPrecioComida < 0) {
-                entradaPrecioComida = parseInt(prompt("ingresa precio de otra comida"));
-            }
-            pedidoComida.push({ id: (comida), comida: (entradaComida), precioComida: (entradaPrecioComida) });
-            comida = pedidoComida[4].comida;
-            precioComida = pedidoComida[4].precioComida;
-        }
-        else {
-            comida = 0;
-        }
-    }
-
-    // Ordena de menor a mayor las comidas
-    let ordenadosPrecioComida = [];
-    ordenadosPrecioComida = pedidoComida.map(elemento => elemento);
-    ordenadosPrecioComida.sort(function (a, b) {
-        return a.precioComida - b.precioComida;
-    });
-
-    console.log("Ordenar por precio comida");
-    console.log(ordenadosPrecioComida);
 
 
-    while (!cantidadComida || cantidadComida == 0 || cantidadComida < 0) {
-        cantidadComida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"));
-    }
 
-    const pedidoBebida = [
-        { id: 1, bebida: "Gaseosa", precioBebida: 150 },
-        { id: 2, bebida: "Agua", precioBebida: 100 },
-        { id: 3, bebida: "Jugo", precioBebida: 200 },
-        { id: 4, bebida: "Agua gasificada", precioBebida: 120 },
-    ]
 
-    while (!bebida || bebida == 0 || bebida > 5 || bebida < 0) {
-        bebida = parseInt(prompt("¿Qué le gustaría beber? Introduce el número junto a la opción:\n 1: Gaseosa($150),\n 2: Agua($100),\n 3: Jugo($200),\n 4: Agua gasificada($120),\n 5: Otro bebida"));
 
-        if (bebida == 1) {
-            bebida = pedidoBebida[0].bebida;
-            precioBebida = pedidoBebida[0].precioBebida;
-        }
-        else if (bebida == 2) {
-            bebida = pedidoBebida[1].bebida;
-            precioBebida = pedidoBebida[1].precioBebida;
-        }
-        else if (bebida == 3) {
-            bebida = pedidoBebida[2].bebida;
-            precioBebida = pedidoBebida[2].precioBebida;
-        }
-        else if (bebida == 4) {
-            bebida = pedidoBebida[3].bebida;
-            precioBebida = pedidoBebida[3].precioBebida;
-        }
-        else if (bebida == 5) {
-            let entradaBebida = prompt("Ingresar otra bebida");
-            let entradaPrecioBebida;
-            while (!entradaPrecioBebida || entradaPrecioBebida == 0 || entradaPrecioBebida < 0) {
-                entradaPrecioBebida = parseInt(prompt("Ingresa precio de otra bebida"));
-            }
-            pedidoBebida.push({ id: (bebida), bebida: (entradaBebida), precioBebida: (entradaPrecioBebida) });
-            bebida = pedidoBebida[4].bebida;
-            precioBebida = pedidoBebida[4].precioBebida;
-        }
-        else {
-            bebida = 0;
-        }
-    }
-    
-    // Ordena las bebidas de menor a mayor precio
-    let ordenadosPrecioBebida = [];
-    ordenadosPrecioBebida = pedidoBebida.map(elemento => elemento);
-    ordenadosPrecioBebida.sort(function (a, b) {
-        return a.precioBebida - b.precioBebida;
-    });
 
-    console.log("Ordenar por precio bebida");
-    console.log(ordenadosPrecioBebida);
 
-    while (!cantidadBebida || cantidadBebida == 0 || cantidadBebida < 0) {
-        cantidadBebida = parseInt(prompt("Introduce la cantidad deseada.(Solo números)"))
-    }
 
-    return new Pedido(comida, precioComida, cantidadComida, bebida, precioBebida, cantidadBebida);
+
+const misCuentas = [];
+
+function guardarCuentaLocalStorage() {
+    localStorage.setItem('misCuentas', JSON.stringify(misCuentas));
+    // localStorage.setItem('Productos agregados al carrito', JSON.stringify( misCuentas ) );
+    localStorage.setItem('Numero de productos agregados', misCuentas.length);
 }
 
-alert("Ingrese su pedido");
+$(".lista").prepend('<h1>Lista</h1>');
+const productos = [
+    { id: 1, bebida: "Gaseosa", precioBebida: 150 },
+    { id: 2, bebida: "Agua", precioBebida: 100 },
+    { id: 3, bebida: "Jugo", precioBebida: 200 },
+    { id: 4, bebida: "Agua gasificada", precioBebida: 120 },
+]
+
+for (const producto of productos) {    
+    $(".lista-productos").prepend(`<div>
+                            <h4> Producto: ${producto.bebida}</h4>
+                            <b> $ ${producto.precioBebida}</b>
+                            <button id="btn${producto.id}">Comprar</button>
+                            </div>`);
+    for (let i = 0; i < 1; i++) {
+        $(`#btn${producto.id}`).click(() => {
+            console.log(`Compreaste ${producto.bebida}`);
+            misCuentas.push({
+                id: (producto.id),
+                bebida: (producto.bebida),
+                precioBebida: (producto.precioBebida),
+            });
+            guardarCuentaLocalStorage()
+        })
+
+    }
+};
+
+
+
+
+// BOTON MOSTAR PEDIDO
+$(".btn-mostrar").append('<button id="btn-mostrar3">Mostrar3</button>');
+$("#btn-mostrar3").click(() => {
+    obtenerLocalStorage();
+});
+
+
+function obtenerLocalStorage() {
+    let guardado = JSON.parse(localStorage.getItem('misCuentas'));
+    console.log(guardado);
+    for (const producto of guardado) {
+        // for ( let i = 0 ; i < i+1 ; i++) {
+        $('#carrito__sublista').append(`<li class="sublista__item" >${producto.bebida}</li>`);
+        console.log(`${producto.bebida}`);
+    }
+    let carritoContadorStorage = localStorage.getItem('Numero de productos agregados');
+    $('#carrito__number').text(`Cantidad de Articulos:${carritoContadorStorage}`);
+}
+
+
+
+
+$(".btn-mostrar").append('<button id="btn-mostrar2">Mostrar</button>');
+$(".fotos").prepend(`<div id="fotos2" style="width: 50%">
+1: Pancho ($100)<br>
+2: Hamburguesa ($350)<br>
+3: Picada ($700)<br>
+4: Tostados ($200)<br>
+    </div>`);
+$("#btn-mostrar2").click(() => {
+    $("#fotos2").toggle("fast");
+});
+
+
+
+
+
 
 const pedido = new tomarPedido();
 pedido.calcularCuenta();
