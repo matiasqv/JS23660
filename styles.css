@@ -1,0 +1,15 @@
+#promo {
+    padding: 5px;
+    background: red;
+}
+#btn-promo{
+    margin: 2px;
+    padding: 5px;
+}
+#btn-mostrar{
+    margin: 2px;
+    padding: 5px;
+}
+#compra{
+    background: orange;
+}
