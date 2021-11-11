@@ -70,7 +70,6 @@ const misCuentas = [];
 
 function guardarCuentaLocalStorage() {
     localStorage.setItem('misCuentas', JSON.stringify(misCuentas));
-    // localStorage.setItem('Productos agregados al carrito', JSON.stringify( misCuentas ) );
     localStorage.setItem('Numero de productos agregados', misCuentas.length);
 }
 
@@ -116,14 +115,12 @@ function obtenerLocalStorage() {
     let guardado = JSON.parse(localStorage.getItem('misCuentas'));
     console.log(guardado);
     for (const producto of guardado) {
-        // for ( let i = 0 ; i < i+1 ; i++) {
         $('#carrito__sublista').append(`<li class="sublista__item" >${producto.bebida}</li>`);
         console.log(`${producto.bebida}`);
     }
     let carritoContadorStorage = localStorage.getItem('Numero de productos agregados');
     $('#carrito__number').text(`Cantidad de Articulos:${carritoContadorStorage}`);
 }
-
 
 
 
