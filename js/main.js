@@ -29,6 +29,22 @@ for (const producto of productos) {
     }
 };
 
+// STYLES  CSS
+        $("h4").css({
+            "margin": "10px",
+            "color": "blue",
+            "font-size": "30px",
+        });
+        $("#promo").css({
+            "margin": "10px",
+            "color": "blue",
+            "font-size": "30px",
+            width: '50%',
+        });
+        $('#compra').css({
+            width: '50%',
+        });
+
 function guardarCuentaLocalStorage() {
     localStorage.setItem('misCuentas', JSON.stringify(misCuentas));
     localStorage.setItem('Numero de productos agregados', misCuentas.length);
