@@ -45,8 +45,8 @@ $("#btn-mostrar").click(() => {
 function obtenerLocalStorage() {
     let guardado = JSON.parse(localStorage.getItem('misCuentas'));
     $('#compra').append(`<h1>Resumen</h1>`);
-    $("#compra").prepend('<button id="btn-clear">Limpiar</button>');
-    $("#btn-clear").click(() => {
+    $("#compra").prepend('<button id="btn-cerrar">Cerrar</button>');
+    $("#btn-cerrar").click(() => {
         location.reload();
 
     });
@@ -57,7 +57,7 @@ function obtenerLocalStorage() {
 }
 
 
-// PROMCION 
+// PROMOCION 
 
 $("#btn-promo").append('<button id="btn-promo">Mostrar Promociones</button>');
 $("#promo").prepend(`<div id="promo">
@@ -66,8 +66,9 @@ $("#promo").prepend(`<div id="promo">
 3: Picada ($700)<br>
 4: Tostados ($200)<br>
     </div>`);
+// Oculta
+$("#promo").hide();
 
-//
 $("#btn-promo").click(() => {
-    $("#promo").toggle("fast");
+    $("#promo").toggle("slow");
 });
