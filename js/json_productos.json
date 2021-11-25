@@ -1,0 +1,23 @@
+{
+
+"bebidas":
+
+[
+    { "id": 1, "bebida": "Gaseosa", "precioBebida": 150 },
+    { "id": 2, "bebida": "Agua", "precioBebida": 100 },
+    { "id": 3, "bebida": "Jugo", "precioBebida": 200 },
+    { "id": 4, "bebida": "Agua gasificada", "precioBebida": 120 }
+],
+
+"comidas" :
+[
+    { "id": 1, "comida": "Pancho", "precioComida": 100 },
+    { "id": 2, "comida": "Hamburguesa", "precioComida": 350 },
+    { "id": 3, "comida": "Picada", "precioComida": 700 },
+    { "id": 4, "comida": "Tostados", "precioComida": 200 }
+]
+
+
+}
+
+
