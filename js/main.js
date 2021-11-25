@@ -4,28 +4,20 @@ $(document).ready(() => {
     const misCuentas = [];
 
     $(".lista").prepend('<h1>Lista</h1>');
-    const URL__JSON = "../js/json_productos.json"
 
-    console.log(URL__JSON);
-
-
-    $.getJSON(URL__JSON, function (respuesta, estado) {
-        console.log(estado);
+    // obtener la información de un archivo JSON
+    const URL_JSON = "../js/json_productos.json"
+    $.getJSON(URL_JSON, function (respuesta, estado) {
         if (estado === "success") {
             let productos = respuesta;
-            console.log(productos);
-            console.log(productos.bebidas);
             for (const productoBebida of productos.bebidas) {
-                // console.log(respuesta);
-                // console.log(productoBebida);
+                // Lista de productos
                 $(".lista-productos").append(`<div>
                                     <h4> Producto: ${productoBebida.bebida}</h4>
                                     <b> $ ${productoBebida.precioBebida}</b>
                                     <button class="comprar" id="btn${productoBebida.id}">Comprar</button>
                                     </div>`);
                 for (let i = 0; i < 1; i++) {
-
-                    console.log(productoBebida.id);
                     $(`#btn${productoBebida.id}`).click(() => {
                         misCuentas.push({
                             id: (productoBebida.id),
@@ -44,16 +36,47 @@ $(document).ready(() => {
                 });
             };
 
+            // Lista de Promocion
+            for (const productoComida of productos.comidas) {
+                $("#promo").append(`<div>
+                                    <h4> Producto: ${productoComida.comida}</h4>
+                                    <b> $ ${productoComida.precioComida}</b>
+                                    <button class="comprar" id="btn2${productoComida.id}">Comprar</button>
+                                    </div>`);
+                for (let i = 0; i < 1; i++) {
+                    $(`#btn2${productoComida.id}`).click(() => {
+                        misCuentas.push({
+                            id: (productoComida.id),
+                            comida: (productoComida.comida),
+                            precioComida: (productoComida.precioComida),
+                        });
+                        guardarCuentaLocalStorage();
+                    });
+                };
+                // Modifica el color del btn cuando pasa el mouse 
+                $(`#btn2${productoComida.id}`).mouseover(function () {
+                    $(`#btn2${productoComida.id}`).css({ "background": "green", })
+                        .mouseout(function () {
+                            $(`#btn2${productoComida.id}`).css({ "background": "grey", })
+                        });
+                });
+            };
         } else {
             console.log(estado);
-
-
-
         }
     });
 
 
+    // PROMOCION 
 
+    $("#btn-promo").append('<button id="btn-promo">Mostrar Promociones</button>');
+
+    // Oculta
+    $("#promo").hide();
+
+    $("#btn-promo").click(() => {
+        $("#promo").toggle("slow");
+    });
 
 
 
@@ -110,112 +133,35 @@ $(document).ready(() => {
     }
 
 
-    // PROMOCION 
-
-    $.getJSON(URL__JSON, function (respuesta, estado) {
-        // console.log(estado);
-        if (estado === "success") {
-            let productos = respuesta;
-            // console.log(productos);
-            // console.log(productos.bebidas);
-            for (const productoComida of productos.comidas) {
-                // console.log(respuesta);
-                // console.log(productoComida);
-                $("#promo").append(`<div>
-                                    <h4> Producto: ${productoComida.comida}</h4>
-                                    <b> $ ${productoComida.precioComida}</b>
-                                    <button class="comprar" id="btn2${productoComida.id}">Comprar</button>
-                                    </div>`);
-                for (let i = 0; i < 1; i++) {
-                    $(`#btn2${productoComida.id}`).click(() => {
-                        misCuentas.push({
-                            id: (productoComida.id),
-                            comida: (productoComida.comida),
-                            precioComida: (productoComida.precioComida),
-                        });
-                        guardarCuentaLocalStorage();
-                    });
-                };
-                // Modifica el color del btn cuando pasa el mouse 
-                $(`#btn2${productoComida.id}`).mouseover(function () {
-                    $(`#btn2${productoComida.id}`).css({ "background": "green", })
-                        .mouseout(function () {
-                            $(`#btn2${productoComida.id}`).css({ "background": "grey", })
-                        });
-                });
-            };
-
-        } else {
-            console.log(estado);
-
-
-
-        }
-    });
-
-    $("#btn-promo").append('<button id="btn-promo">Mostrar Promociones</button>');
-
-    // Oculta
-    $("#promo").hide();
-
-    $("#btn-promo").click(() => {
-        $("#promo").toggle("slow");
-    });
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    //Declaramos la url que vamos a usar para el GET
+    //Usamos GET para obtener información del servidor
     const URLGET = "https://jsonplaceholder.typicode.com/albums/1/photos"
-    //Agregamos un botón con jQuery
-    $("body").prepend('<button id="btn1">GET</button>');
+    $("body").append('<button id="btn3">Mostrar información del servidor</button>');
+    $("#btn3").click(() => {
 
-    //Escuchamos el evento click del botón agregado
-    $("#btn1").click(() => {
         $.get(URLGET, function (respuesta, estado) {
-            console.log(estado);
 
             if (estado === "success") {
-                let misDatos = respuesta;
-                console.log(misDatos);
-                for (const dato of misDatos) {
-                    console.log(dato);
 
-                    // me devuelve el arrey por cada vez que pasa
-                    // console.log(misDatos); 
+                let misDatos = respuesta;
+
+                for (const dato of misDatos) {
                     $("body").append(`<div>
-                 <h3>${dato.id}</h3>
-                 <p> ${dato.title}</p>
-                 <img src=${dato.url}></img>
-                                     </div>`);
+                    <h3>${dato.id}</h3>
+                    <p> ${dato.title}</p>
+                    <img src=${dato.url}></img>
+                                        </div>`);
                 }
             } else {
                 console.log(estado);
-
-
-
             }
         });
     });
-
-
-
-
-
-
-
 
 
 
